@@ -8,7 +8,7 @@
 # contrast.py 128,128,128 255,255,255  # 3.949440
 if __name__ == "__main__":
     import argparse, contrast
-    parser = argparse.ArgumentParser(description='引数の色が白系なら0を返し、黒系なら1を返す。色は第一引数にてRGB値(255,255,255)形式で受け付ける。')
+    parser = argparse.ArgumentParser(description='引数の色が白系なら0を返し、黒系なら1を返す。白／黒のうち高コントラストのほうのレベルまたは値が指定したレベルやコントラスト値より低ければ2を返す。')
     parser.add_argument('rgb', help='色。R,G,Bのようにカンマ区切りで渡す。0<=R,G,B<=255')
     group = parser.add_mutually_exclusive_group()
     group.add_argument('-l', '--level', type=int, default=0, help='保障レベル。1,2,3(A,AA,AAA)のいずれかを指定する。')
