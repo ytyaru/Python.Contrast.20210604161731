@@ -2,6 +2,13 @@
 # coding: utf8
 # コントラストレベルを返す。
 # https://ja.wikipedia.org/wiki/Help:%E9%85%8D%E8%89%B2%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88%E6%AF%94
+def contrast_level(contrast):
+    if   contrast < 3.0: return 0
+    elif contrast < 4.5: return 1
+    elif contrast < 7.0: return 2
+    elif 7.0 <= contrast: return 3
+    else: raise Error('プログラムエラー。')
+
 if __name__ == "__main__":
     import argparse, contrast
     from argparse import RawTextHelpFormatter
